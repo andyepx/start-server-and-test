@@ -80,4 +80,16 @@ describe('utils', () => {
       )
     })
   })
+
+  context('parsesWaitOnOptions', () => {
+    const parseWaitOnOptions = utils.parseWaitOnOptions
+
+    it('makes an object from an empty option', () => {
+        la(parseWaitOnOptions(null), {})
+    })
+
+    it('parses json right', () => {
+        la(parseWaitOnOptions('{debug: true}'), {debug: true});
+    })
+  })
 })

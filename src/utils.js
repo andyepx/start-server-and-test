@@ -49,7 +49,12 @@ const normalizeUrl = input => {
   })
 }
 
+const parseWaitOnOptions = input => {
+    return is.string(input) ? JSON.parse(input) : {}
+}
+
 module.exports = {
   isUrlOrPort: isUrlOrPort,
-  normalizeUrl: normalizeUrl
+  normalizeUrl: normalizeUrl,
+  parseWaitOnOptions: parseWaitOnOptions
 }
